@@ -1,9 +1,9 @@
 const SignUp = () => {
   return (
-    <div>
-      This is sign-up.
+    <div className="bg-black">
+      
     </div>
   )
 }
 
-export default SignUp
+export default SignUp;

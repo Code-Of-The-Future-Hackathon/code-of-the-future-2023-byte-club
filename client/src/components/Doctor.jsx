@@ -1,8 +1,10 @@
+import Navbar from '../components/Navbar';
+
 const Doctor = () => {
   return (
-    <div>
-      This is doctor.
-    </div>
+    <>
+      <Navbar />
+    </>
   )
 }
 

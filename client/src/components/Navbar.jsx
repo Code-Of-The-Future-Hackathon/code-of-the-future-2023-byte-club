@@ -8,20 +8,43 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
+
+    const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
+
+    const toggleFeatures = () => {
+        setIsFeaturesOpen(!isFeaturesOpen);
+    };
+
     const navItems = [
-        {link: "Features", path: "features"},
         {link: "FAQ", path: "faq"},
-        {link: "Contact", path: "contact"},
+        {link: "Contact Us", path: "contact"},
     ]
     return (
         <>
-            <nav className='bg-white md:px-14 p-4 max-w-screen-2xl border-b mx-auto text-primary fixed top-0 right-0 left-0'>
+            <nav className='bg-white md:px-18 p-4 max-w-screen-2xl border-b mx-auto text-primary fixed top-0 right-0 left-0'>
                 <div className='text-lg container mx-auto flex justify-between items-center font-medium'>
                     <div className='flex space-x-14 items-center'>
-                        <a href="/" className='text-2xl font-semibold flex items-center space-x-3 text-primary'><span>Byte Club</span>
+                        <a href="/" className='text-3xl font-semibold flex items-center space-x-3 text-primary'><span>Byte Club</span>
                         </a>
                         
-                        <ul className='md:flex space-x-12 hidden'>
+                        <ul className='md:flex space-x-12 hidden relative'>
+                            <li>
+                            <button onClick={toggleFeatures} className='block hover:text-gray-300'>Features</button>
+                                {isFeaturesOpen && (
+                                    <ul className='absolute bg-white mt-2 py-2 px-4 rounded shadow-lg text-sm
+                                    text-center left-1/5 transform -translate-x-1/4'>
+                                        <li>
+                                            <Link to = "/map" className = "block hover:text-gray-300">Map</Link>
+                                        </li>
+                                        <li>
+                                            <Link to = "/doctor" className="block hover:text-gray-300">AI Self-Doctor</Link>
+                                        </li>
+                                        <li>
+                                            <Link to = "/doctor" className="block hover:text-gray-300">Boost your mood</Link>
+                                        </li>
+                                    </ul>
+                                )}
+                            </li>
                             {
                                 navItems.map(({link, path}) => <a key = {link} href = {path} className = 'block hover:text-gray-300'>{link}</a>)
                             }
