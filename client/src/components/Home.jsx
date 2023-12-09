@@ -1,10 +1,11 @@
-import { Navbar, OurGoal } from "./";
+import { Navbar, OurGoal, Statistics } from "./";
 
 const Home = () => {
     return (
         <>
             <Navbar />
             <OurGoal />
+            <Statistics />
         </>
     )
 }

@@ -7,6 +7,8 @@ import Contact from "./Contact";
 import MentalHealth from "./MentalHealth";
 import FAQ from "./FAQ";
 import OurGoal from "./OurGoal";
+import Statistics from "./Statistics";
+import Information from "./Information";
 
 
 export {
@@ -18,5 +20,7 @@ export {
     Contact,
     MentalHealth,
     FAQ,
-    OurGoal
+    OurGoal,
+    Statistics,
+    Information
 };

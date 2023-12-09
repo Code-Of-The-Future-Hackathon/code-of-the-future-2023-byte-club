@@ -3,9 +3,9 @@ import styles from '../style';
 
 const OurGoal = () => (
     <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
-        <div className={`flex-1  ${styles.flexStart} flex-col xl:px-[30em] xl:flex-none xl: sm:px-16 px-10`}>
+        <div className={`flex-1  ${styles.flexStart} flex-col xl:px-[30em] xl:flex-none xl: sm:px-16 px-10 mx-20`}>
 
-            <p className="xl:text-8xl text-6xl py-6 text-indigo-900">Our Goal</p>
+            <p className="xl:text-8xl text-8xl py-6 text-indigo-900">Our Goal</p>
 
             
             <p className={`${styles.paragraph} sm: text-[1.4em] xl:text-[2em] xl:leading-10 max-w-[470px] `}>
