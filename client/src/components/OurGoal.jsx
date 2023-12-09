@@ -9,7 +9,7 @@ const OurGoal = () => (
 
             
             <p className={`${styles.paragraph} sm: text-[1.4em] xl:text-[2em] xl:leading-10  `}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                Our goal is to make people's lives easier by using AI to predict your sickness and suggest a possible treatment.
             </p>
         </div>
 
