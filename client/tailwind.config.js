@@ -19,7 +19,18 @@ export default {
       },
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-      }
+      },
+      fontFamily: {
+        rubik: ["Rubik", "sans-serif"],
+      },
+    },
+    screens: {
+      xs: "480px",
+      ss: "620px",
+      sm: "768px",
+      md: "1024px",
+      lg: "1200px",
+      xl: "1700px",
     },
   },
   plugins: [],

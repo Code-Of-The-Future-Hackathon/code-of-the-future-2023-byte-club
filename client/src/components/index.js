@@ -6,6 +6,7 @@ import Doctor from "./Doctor";
 import Contact from "./Contact";
 import MentalHealth from "./MentalHealth";
 import FAQ from "./FAQ";
+import OurGoal from "./OurGoal";
 
 
 export {
@@ -16,5 +17,6 @@ export {
     Doctor,
     Contact,
     MentalHealth,
-    FAQ
+    FAQ,
+    OurGoal
 };
