@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/mental-health" element={<MentalHealth/>} />
           <Route exact path="/contact" element={<Contact/>} />
           <Route exact path="/faq" element={<FAQ/>} />
-          <Route exact path="/mood-boost" element={<MoodBoost/>} />
+          <Route exact path="/mood" element={<MoodBoost/>} />
         </Routes>
       </>
     </Router>

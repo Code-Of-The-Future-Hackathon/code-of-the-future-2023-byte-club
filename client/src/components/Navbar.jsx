@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaBars, FaXmark } from 'react-icons/fa6';
-
+import { Link } from "react-router-dom";
+ 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -28,9 +29,9 @@ const Navbar = () => {
                                 <a key={link} href={path} className='block hover:text-gray-300 text-2xl'>{link}</a>
                             ))
                         }
-                        <button className='border-2 bg-indigo-600 rounded-xl p-3 text-white hover:bg-indigo-900'>
+                        <Link to="/mood" className='border-2 bg-indigo-600 rounded-xl p-3 text-white hover:bg-indigo-900'>
                             Boost Your Mood
-                        </button>
+                        </Link>
                     </div>
 
                     <div className='md:hidden'>

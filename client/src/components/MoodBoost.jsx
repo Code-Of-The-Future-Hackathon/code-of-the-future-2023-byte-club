@@ -2,7 +2,13 @@ import Navbar from "./Navbar";
 
 const MoodBoost = () => {
     return (
-        <Navbar />
+        <>
+            <Navbar />
+
+            <div className="mt-24">
+                Hello
+            </div>
+        </>
     )
 }
 
