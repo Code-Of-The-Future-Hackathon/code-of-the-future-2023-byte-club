@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Navbar } from "./";
-import { aiDoctor } from '../assets';
-import { symptomImage } from "../assets";
+import { aiDoctor, symptomImage } from '../assets';
 
 const Doctor = () => {
 
