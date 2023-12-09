@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FaBars, FaXmark } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,15 +22,12 @@ const Navbar = () => {
                         <a href="/" className='text-3xl font-semibold flex items-center space-x-3 text-primary'><span>Byte Club</span></a>
                     </div>
 
-                    <div className='flex space-x-12 items-center'>
-
-                        <div className='flex items-center space-x-14'>
-                            {
-                                navItems.map(({ link, path }) => (
-                                    <a key={link} href={path} className='block hover:text-gray-300 text-2xl'>{link}</a>
-                                ))
-                            }
-                        </div>
+                    <div className='hidden md:flex space-x-12 items-center'> {/* Hide this on small screens */}
+                        {
+                            navItems.map(({ link, path }) => (
+                                <a key={link} href={path} className='block hover:text-gray-300 text-2xl'>{link}</a>
+                            ))
+                        }
                     </div>
 
                     <div className='md:hidden'>

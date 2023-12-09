@@ -41,7 +41,7 @@ const Doctor = () => {
 
     if (matchedSpecialities.length > 0) {
       return (
-        <div>
+        <div className="flex-row">
           <ul>
             {matchedSpecialities.map((speciality) => (
               <li key={speciality}>
@@ -197,7 +197,7 @@ const Doctor = () => {
               }}
             />
 
-            <div className="mt-4 p-12">
+            <div className="mt-4 p-12 flex">
               {renderSuperDocLink()}
             </div>
 

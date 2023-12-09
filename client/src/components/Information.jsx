@@ -50,6 +50,7 @@ const Information = () => {
                     <p>{information}</p>
                 </div>
             </div>
+            <hr />
         </>
     )
 }

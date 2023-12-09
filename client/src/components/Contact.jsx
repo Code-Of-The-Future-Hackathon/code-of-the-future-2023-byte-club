@@ -12,12 +12,12 @@ const Contact = () => {
                         <div className="flex flex-col space-y-8 justify-between">
                             <div>
                                 <h1 className="font-bold text-4xl tracking-wide">Contact Us</h1>
-                                <p className="pt-2 text-cyan-100 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, eveniet. Recusandae deserunt aspernatur..</p>
+                                <p className="pt-2 text-cyan-100 text-sm">Contact us via email or social media to provide us with feedback.</p>
                             </div>
                             <div className="flex flex-col space-y-6">
                                 <div className="inline-flex space-x-2 items-center">
                                     <img src="https://cdn-icons-png.flaticon.com/512/126/126523.png" alt="phone" width = "25px"/>
-                                    <span>+(123) 456 7890</span>
+                                    <span>+359 888 1234</span>
                                 </div>
                                 <div className="inline-flex space-x-2 items-center">
                                     <img src="https://cdn-icons-png.flaticon.com/512/126/126519.png" alt="mail" width = "25px"/>
@@ -25,7 +25,7 @@ const Contact = () => {
                                 </div>
                                 <div className="inline-flex space-x-2 items-center">
                                     <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="location" width = "25px"/>
-                                    <span>11, Street 342, Abcd fgh</span>
+                                    <span>ul. "Konstantin Velichkov", Pazardzhik Centre, Pazardzhik</span>
                                 </div>
                             </div>
                             <div className="flex space-x-4 text-lg">
