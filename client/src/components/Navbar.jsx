@@ -22,12 +22,15 @@ const Navbar = () => {
                         <a href="/" className='text-3xl font-semibold flex items-center space-x-3 text-primary'><span>Byte Club</span></a>
                     </div>
 
-                    <div className='hidden md:flex space-x-12 items-center'> {/* Hide this on small screens */}
+                    <div className='hidden md:flex space-x-12 items-center'>
                         {
                             navItems.map(({ link, path }) => (
                                 <a key={link} href={path} className='block hover:text-gray-300 text-2xl'>{link}</a>
                             ))
                         }
+                        <button className='border-2 bg-indigo-600 rounded-xl p-3 text-white hover:bg-indigo-900'>
+                            Boost Your Mood
+                        </button>
                     </div>
 
                     <div className='md:hidden'>
