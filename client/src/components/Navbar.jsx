@@ -4,19 +4,15 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const toggleFeatures = () => {
-        setIsFeaturesOpen(!isFeaturesOpen);
-    };
-
     const navItems = [
-        { link: "FAQ", path: "faq" },
-        { link: "Contact Us", path: "contact" },
+        { link: "Map", path: "map" },
+        { link: "AI Self Doctor", path: "ai-doctor" },
+        { link: "Contact", path: "contact" },
     ];
 
     return (
@@ -28,24 +24,6 @@ const Navbar = () => {
                     </div>
 
                     <div className='flex space-x-12 items-center'>
-                        <ul className='md:flex space-x-12 hidden relative text-2xl'>
-                            <li>
-                                <button onClick={toggleFeatures} className='flex hover:text-gray-300'>Features<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Arrow-down.svg/960px-Arrow-down.svg.png" className='w-[2rem] h[4rem] mt-1'/></button>
-                                {isFeaturesOpen && (
-                                    <ul className='absolute bg-white leading-relaxed text-xl mt-2 py-2 px-8 w-60 rounded shadow-lg text-center right-0'>
-                                        <li>
-                                            <Link to="/map" className="block hover:text-gray-300">Map</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/doctor" className="block hover:text-gray-300">AI Self-Doctor</Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/doctor" className="block hover:text-gray-300">Boost your mood</Link>
-                                        </li>
-                                    </ul>
-                                )}
-                            </li>
-                        </ul>
 
                         <div className='flex items-center space-x-14'>
                             {

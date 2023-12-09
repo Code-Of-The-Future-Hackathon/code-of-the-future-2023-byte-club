@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Navbar } from "./";
-import { aiDoctor, symptomImage } from '../assets';
+import { aiDoctor } from '../assets';
+import { symptomImage } from "../assets";
 
 const Doctor = () => {
 
@@ -41,13 +42,13 @@ const Doctor = () => {
     if (matchedSpecialities.length > 0) {
       return (
         <div>
-          <p>Specialities found in response:</p>
           <ul>
             {matchedSpecialities.map((speciality) => (
               <li key={speciality}>
                 <a
                   href={`https://superdoc.bg/lekari?specialty_id=${availableSpecialities[speciality]}&region_id=2&name=`}
                   target="_blank"
+                  className="border-2 border-pink rounded-xl bg-pink text-white hover:border-indigo-100 hover:bg-indigo-100 hover:text-secondary px-4 py-4 mx-0 my-0"
                 >
                   {speciality}
                 </a>
@@ -196,7 +197,9 @@ const Doctor = () => {
               }}
             />
 
-            {renderSuperDocLink()}
+            <div className="mt-4 p-12">
+              {renderSuperDocLink()}
+            </div>
 
           </div>
         )}
