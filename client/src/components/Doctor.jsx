@@ -5,6 +5,23 @@ import { aiDoctor } from '../assets';
 import { symptomImage } from "../assets";
 
 const Doctor = () => {
+
+  const availableSpecialities = {
+    "Gynecologist" : "1",
+    "Gastroenterologist" : "3",
+    "Dermatologist" : "4",
+    "Dentist" : "7",
+    "Vascular specialist" : "8",
+    "Neurologist" : "10",
+    "Nephrologist" : "11",
+    "Orthopedist" : "12",
+    "Ophthalomogist" : "13",
+    "Internal diseases" : "16",
+    "Ear Nose Throat" : "17",
+    "Rheumatologist" : "44",
+
+  }
+
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
   const [response, setResponse] = useState("");
 
@@ -14,16 +31,49 @@ const Doctor = () => {
     }
   };
 
+  const renderSuperDocLink = () => {
+    const matchedSpecialities = [];
+    for (const speciality in availableSpecialities) {
+      if (response.toLowerCase().includes(speciality.toLowerCase())) {
+        matchedSpecialities.push(speciality);
+      }
+    }
+
+    if (matchedSpecialities.length > 0) {
+      return (
+        <div>
+          <p>Specialities found in response:</p>
+          <ul>
+            {matchedSpecialities.map((speciality) => (
+              <li key={speciality}>
+                <a
+                  href={`https://superdoc.bg/lekari?specialty_id=${availableSpecialities[speciality]}&region_id=2&name=`}
+                  target="_blank"
+                >
+                  {speciality}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
+
   const handleSubmit = async () => {
     try {
-      const prompt = `User selected symptoms: ${selectedSymptoms.join(", ")}\n\nDiagnose the possible sicknesses
-       and provide maximum 2 additional symptoms for each diagnosis
-       and recommend treatmant ways but if doctor help is needed recommend
-       doctor visiting a doctor. (You have 75 words and don't go for too
-       much in details and don't use too complex terminologies. 
-       The response should be in format: Possible sickness: {Sickness Name}:
-       \n Symptoms: {Symptoms of the sickness} \n Treatment: {Treatment in 10 
-        words maximum}). Add 3 newlines after treatment`;
+      const prompt = `These are the possible specialities use only from these: 
+      ${Object.keys(availableSpecialities).join(", ")}\n\nUser selected symptoms: 
+      ${selectedSymptoms.join(", ")}\n\nDiagnose the possible sicknesses and provide
+      maximum 2 additional symptoms for each diagnosis, doctor's speciality (for example neurologist, orthopedist etc.), 
+      recommend treatmant ways but if doctor help is needed recommend
+      doctor visiting a doctor. (You have 75 words and don't go for too
+      much in details and don't use too complex terminologies. 
+      The response should be in format: Possible sickness: {Sickness Name}:
+      \n Symptoms: {Symptoms of the sickness} \n Treatment: {Treatment in 10 
+      words maximum} \n Speciality: {Speciality of the sickness}). Give 2 possible sicknesses`; 
       
       const serverResponse = await axios.post("http://localhost:8080/chat", {
         userPrompt: prompt,
@@ -146,6 +196,9 @@ const Doctor = () => {
                 __html: response.replace(/\\n/g, "<br />"),
               }}
             />
+
+            {renderSuperDocLink()}
+
           </div>
         )}
       </div>
