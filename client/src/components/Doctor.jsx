@@ -74,7 +74,7 @@ const Doctor = () => {
       \n Symptoms: {Symptoms of the sickness} \n Treatment: {Treatment in 10 
       words maximum} \n Speciality: {Speciality of the sickness}). Give 2 possible sicknesses`; 
       
-      const serverResponse = await axios.post("http://localhost:8080/chat", {
+      const serverResponse = await axios.post("https://byteclub.azurewebsites.net/chat", {
         userPrompt: prompt,
       });
   
