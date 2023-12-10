@@ -1,4 +1,4 @@
-import { Navbar, OurGoal, Statistics, FAQ, Information } from "../components";
+import { Navbar, OurGoal, Statistics, FAQ, Information, Footer } from "../components";
 
 const Home = () => {
     return (
@@ -8,6 +8,7 @@ const Home = () => {
             <Statistics />
             <Information />
             <FAQ />
+            <Footer />
         </>
     )
 }

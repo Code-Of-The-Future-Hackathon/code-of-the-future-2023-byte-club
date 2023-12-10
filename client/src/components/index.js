@@ -8,6 +8,7 @@ import OurGoal from "./OurGoal";
 import Statistics from "./Statistics";
 import Information from "./Information";
 import MoodBoost from "./MoodBoost";
+import Footer from "./Footer";
 
 
 export {
@@ -20,5 +21,6 @@ export {
     OurGoal,
     Statistics,
     Information,
-    MoodBoost
+    MoodBoost,
+    Footer
 };
