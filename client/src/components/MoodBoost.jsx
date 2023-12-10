@@ -37,7 +37,7 @@ const MoodBoost = () => {
 
         
         <h2 className="text-3xl sm:text-4xl md:text-6xl p-[1.5em] font-bold text-blue-500">Quote:</h2>
-        <p className="text-xl sm:text-2xl md:text-3xl italic pb-[3em] m-[1.5em] xs:m-0 text-slate-900">{quote}</p>
+        <p className="text-xl sm:text-2xl md:text-3xl italic pb-[3em] m-[1.5em] xs:m-0 text-slate-900">"{quote}"</p>
       </div>
 
       <Footer/>

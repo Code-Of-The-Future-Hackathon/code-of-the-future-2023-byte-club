@@ -1,4 +1,4 @@
-import { Navbar, OurGoal, Statistics, FAQ, Information, Footer } from "../components";
+import { Navbar, OurGoal, Statistics, FAQ, Information, Footer } from "./";
 
 const Home = () => {
     return (
