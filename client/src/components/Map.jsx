@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { Navbar } from "./";
+import { Navbar, Footer } from "./";
 
 const Map = () => {
   const [map, setMap] = useState(null);
@@ -75,8 +75,9 @@ const Map = () => {
     <>
       <Navbar />
       <div className="flex justify-center items-center h-screen">
-        <div id="map" className="w-3/4 h-2/3 border-2 border-gray-300 rounded-xl mt-56 md:mt-0" />
+        <div id="map" className="w-3/4 h-2/3 border-2 border-gray-300 rounded-xl mt-56 md:mt-20" />
       </div>
+      <Footer />
     </>
   );
 };

@@ -1,12 +1,12 @@
-import Navbar from "./Navbar";
+import { Navbar, Footer } from "./";
+import { github, instagram, facebook, linkedin} from '../assets';
 
 const Contact = () => {
     return (
         <>
             <Navbar />
 
-            <body className = "antialised bg-gray-100">
-                <div className = "flex w-full min-h-screen justify-center items-center">
+                <div className = "flex w-full min-h-screen justify-center items-center antialised bg-gray-100 pt-[5em] ">
                     <div className = "flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 bg-indigo-500 w-full max-w-4xl p-8 sm:p-12 rounded-xl shadow-lg text-white overflow-hidden">
 
                         <div className="flex flex-col space-y-8 justify-between">
@@ -14,25 +14,12 @@ const Contact = () => {
                                 <h1 className="font-bold text-4xl tracking-wide">Contact Us</h1>
                                 <p className="pt-2 text-cyan-100 text-sm">Contact us via email or social media to provide us with feedback.</p>
                             </div>
-                            <div className="flex flex-col space-y-6">
-                                <div className="inline-flex space-x-2 items-center">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/126/126523.png" alt="phone" width = "25px"/>
-                                    <span>+359 888 1234</span>
-                                </div>
-                                <div className="inline-flex space-x-2 items-center">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/126/126519.png" alt="mail" width = "25px"/>
-                                    <span>example@xyzwebsite.com</span>
-                                </div>
-                                <div className="inline-flex space-x-2 items-center">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="location" width = "25px"/>
-                                    <span>ul. "Konstantin Velichkov", Pazardzhik Centre, Pazardzhik</span>
-                                </div>
-                            </div>
+                            
                             <div className="flex space-x-4 text-lg">
-                                <a href=""><img src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png" alt="facebook" width = "25px"/></a>
-                                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/717/717392.png" alt="instagram" width = "25px"/></a>
-                                <a href=""><img src="https://cdn.icon-icons.com/icons2/1143/PNG/512/twitterlogooutline_80724.png" alt="twitter" width = "25px"/></a>
-                                <a href=""><img src="https://static-00.iconduck.com/assets.00/linkedin-icon-512x512-sam6sbc4.png" alt="linkedin" width = "25px"/></a>
+                            <a href="https://github.com/Code-Of-The-Future-Hackathon/code-of-the-future-2023-byte-club.git"><img src={github} alt="Github" className="w-[2em]"/></a>
+                            <a href="https://www.linkedin.com/"><img src={linkedin} alt="Linkedin" className="w-[2em]"/></a>
+                            <a href="https://www.facebook.com"><img src={facebook} alt="Facebook" className="w-[2em]"/></a>
+                            <a href="https://www.instagram.com/"><img src={instagram} alt="Instagram" className="w-[2em]"/></a>
                             </div>
                         </div>
                         <div className="relative">
@@ -62,7 +49,8 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-            </body>
+
+            <Footer />
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Navbar } from "./";
+import { Navbar, Footer } from "./";
 import { aiDoctor } from '../assets';
 import { symptomImage } from "../assets";
 
@@ -44,7 +44,7 @@ const Doctor = () => {
         <div className="flex-row">
           <ul>
             {matchedSpecialities.map((speciality) => (
-              <li key={speciality}>
+              <li key={speciality} className="my-[3em]">
                 <a
                   href={`https://superdoc.bg/lekari?specialty_id=${availableSpecialities[speciality]}&region_id=2&name=`}
                   target="_blank"
@@ -95,13 +95,13 @@ const Doctor = () => {
           <p>Use cutting-edge technology to formulate a diagnosis based on your symptoms.</p>
         </div>
         <div>
-          <img src={aiDoctor} alt="AI Self Doctor" className="w-[36em] h-[36em] mx-32" />
+          <img src={aiDoctor} alt="AI Self Doctor" className="w-[36em] h-[36em] ml-24" />
         </div>
       </div>
 
       <hr className="h-1" />
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center pb-[4em]">
         <div className="mr-20 leading-3 flex">
           <div className="mt-20">
             <img src={symptomImage} alt="AI Self Doctor" className="w-[32em] h-[32em] mx-32" />
@@ -204,6 +204,8 @@ const Doctor = () => {
           </div>
         )}
       </div>
+
+      <Footer/>
     </>
   );
 };
