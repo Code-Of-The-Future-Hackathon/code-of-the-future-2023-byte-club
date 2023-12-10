@@ -11,7 +11,7 @@ export default {
     extend: {
       colors: {
         "primary": "010851",
-        "secondary":"#27496d",
+        "secondary":"indigo",
         "tartiary": "#bfc0c0",
         "pink":"#EE9AE5",
         "cyan": colors.cyan,

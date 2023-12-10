@@ -60,7 +60,7 @@ const Map = () => {
     <>
       <Navbar />
       <div className="flex justify-center items-center h-screen">
-        <div id="map" className="w-2/4 h-2/3 border-2 border-gray-300 rounded-xl mt-56 md:mt-0" />
+        <div id="map" className="w-3/4 h-2/3 border-2 border-gray-300 rounded-xl mt-56 md:mt-0" />
       </div>
     </>
   );

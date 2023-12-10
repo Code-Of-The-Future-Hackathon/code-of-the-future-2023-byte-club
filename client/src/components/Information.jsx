@@ -7,8 +7,8 @@ const Information = () => {
         "Increases your mood"
     ];
 
-    const [information, setInformation] = useState("");
-    const [activeButton, setActiveButton] = useState(null);
+    const [information, setInformation] = useState(informationList[0]);
+    const [activeButton, setActiveButton] = useState(0);
 
     const toggleInformation = (index) => {
         setInformation(informationList[index]);
@@ -23,7 +23,7 @@ const Information = () => {
                     <button
                         onClick={() => toggleInformation(0)}
                         className={`border-2 rounded-t-lg w-[20rem] text-xl ${
-                            activeButton === 0 ? 'bg-secondary text-white' : 'hover:bg-gray-800 hover:text-gray-200'
+                            activeButton === 0 ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-100 hover:text-black'
                         }`}
                     >
                         Map
@@ -31,7 +31,7 @@ const Information = () => {
                     <button
                         onClick={() => toggleInformation(1)}
                         className={`border-2 w-[20rem] text-xl ${
-                            activeButton === 1 ? 'bg-secondary text-white' : 'hover:bg-gray-800 hover:text-gray-200'
+                            activeButton === 1 ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-100 hover:text-black'
                         }`}
                     >
                         AI Self Doctor
@@ -39,14 +39,14 @@ const Information = () => {
                     <button
                         onClick={() => toggleInformation(2)}
                         className={`border-2 rounded-b-lg w-[20rem] text-xl ${
-                            activeButton === 2 ? 'bg-secondary text-white' : 'hover:bg-gray-800 hover:text-gray-200'
+                            activeButton === 2 ? 'bg-indigo-600 text-white' : 'hover:bg-indigo-100 hover:text-black'
                         }`}
                     >
                         Mood Increasor
                     </button>
                 </div>
 
-                <div className="bg-white border-2 shadow-xl rounded-lg justify-center items-center flex px-48 text-xl w-1/3">
+                <div className="bg-white border-2 shadow-md rounded-lg justify-center items-center flex px-48 text-xl w-1/3">
                     <p>{information}</p>
                 </div>
             </div>
