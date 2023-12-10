@@ -7,7 +7,11 @@ const Map = () => {
   const [map, setMap] = useState(null);
   const [userLocation, setUserLocation] = useState({ lat: 0, lng: 0 });
 
-  // Function to get user's location
+  const hospitals = [
+    { name: "Hospital Baikal", lat: 42.4635694, lng: 27.4201530 },
+    { name: "Hospital Lake ", lat: 42.5124648, lng: 27.4668899 }
+  ];
+
   const getUserLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -32,17 +36,14 @@ const Map = () => {
 
   useEffect(() => {
     if (!map && userLocation.lat !== 0 && userLocation.lng !== 0) {
-      // Initialize the map with maximum zoom level set to 14
       const leafletMap = L.map('map', {
         minZoom: 5
       }).setView([userLocation.lat, userLocation.lng], 14);
 
-      // Add OpenStreetMap layer
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
       }).addTo(leafletMap);
 
-      // Set the map state
       setMap(leafletMap);
     }
   }, [map, userLocation]);
@@ -53,6 +54,20 @@ const Map = () => {
       L.marker([userLocation.lat, userLocation.lng])
         .addTo(map)
         .bindPopup('Your Location');
+
+      // Add hospital markers with red color
+      hospitals.forEach(hospital => {
+        L.marker([hospital.lat, hospital.lng], {
+          icon: L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+          })
+        })
+          .addTo(map)
+          .bindPopup(hospital.name);
+      });
     }
   }, [map, userLocation]);
 
