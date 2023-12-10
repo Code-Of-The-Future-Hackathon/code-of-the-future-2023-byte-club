@@ -12,7 +12,7 @@ const MoodBoost = () => {
 
   const getActOfKindness = async () => {
     try {
-      const response = await fetch('http://localhost:8080/mood');
+      const response = await fetch('https://byteclub.azurewebsites.net/mood');
       const data = await response.json();
     
       // Check for server errors
