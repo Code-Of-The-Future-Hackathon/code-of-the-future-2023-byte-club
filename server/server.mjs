@@ -2,11 +2,17 @@ import express from "express";
 import cors from "cors";
 import OpenAI from "openai";
 
-const app = express();
-app.use(express.json());
 
+
+const app = express();
+
+app.use(express.json());
 app.use(cors());
 
+const PORT = 8080;
+
+
+/* Example response so we don't make unnecessary API calls
 const exampleResponse = {
     "id": "chatcmpl-xyz123",
     "object": "chat.completion",
@@ -24,48 +30,44 @@ const exampleResponse = {
       }
     ]
   };
+*/
   
 
 const openai = new OpenAI({
-    apiKey: "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"
+    apiKey: "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"
 })
 
 app.post('/chat', async (req, res) => {
   const userPrompt = req.body.userPrompt;
   console.log(userPrompt);
   
-  //const response = await openai.chat.completions.create({
-  //  model: 'gpt-3.5-turbo',
-  //  messages: [{ "role": "user", "content": userPrompt }],
-  //  max_tokens: 120,
-  //});
-  console.log(exampleResponse.choices[0].message.content);
-  res.json({ doctorResponse: exampleResponse.choices[0].message.content.replace(/\n/g, "\\n") });
+  const response = await openai.chat.completions.create({
+    model: 'gpt-3.5-turbo',
+    messages: [{ "role": "user", "content": userPrompt }],
+    max_tokens: 150,
+  });
+  res.json({ doctorResponse: response.choices[0].message.content.replace(/\n/g, "\\n") });
 });
 
 const timestamp = new Date().getTime();  // Get current timestamp
 
 app.get('/mood', async (req, res) => {
     try {
-        /*const response = await openai.chat.completions.create({
+        const response = await openai.chat.completions.create({
             model: 'gpt-3.5-turbo',
             messages: [
                 {
-                    "role": 'system',
+                    "role": 'user',
                     "content": `Tell me a random act of kindness and a positive quote. 
-                    Make sure that you haven't told to someone before . Keep it short 
+                    Generate it randomly from the date and time - ${timestamp} . Keep it short 
                     and simple. In format ({Random act of kindness}\n{Positive Quote}).
-                     Don't use quotation marks`
+                     Don't use quotation marks!`
                 }
             ],
             max_tokens: 100,
         });
-        */
-
-        //console.log(response.choices[0].message.content)
-        const responseArray = `Helped an elderly person cross the street.
-        Every act of kindness creates a ripple effect.`;
-        res.json({ response: responseArray });
+        
+        res.json({ response: response });
     } catch (error) {
         console.error('Error generating random act of kindness:', error);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -73,16 +75,13 @@ app.get('/mood', async (req, res) => {
 });
 
   
-
-// Define a route
+// Define home route
 app.get("/", (req, res) => {
     res.json({
         author: "Byte Club :)",
         message: "Hey!",
     });
 });
-
-const PORT = 8080;
 
 try
 {

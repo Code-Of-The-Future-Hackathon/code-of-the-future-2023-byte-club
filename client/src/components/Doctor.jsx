@@ -33,34 +33,33 @@ const Doctor = () => {
 
   const renderSuperDocLink = () => {
     const matchedSpecialities = [];
+  
     for (const speciality in availableSpecialities) {
       if (response.toLowerCase().includes(speciality.toLowerCase())) {
         matchedSpecialities.push(speciality);
       }
     }
-
+  
     if (matchedSpecialities.length > 0) {
       return (
         <div className="flex-row">
-          <ul>
-            {matchedSpecialities.map((speciality) => (
-              <li key={speciality} className="my-[3em]">
-                <a
-                  href={`https://superdoc.bg/lekari?specialty_id=${availableSpecialities[speciality]}&region_id=2&name=`}
-                  target="_blank"
-                  className="border-2 border-pink rounded-xl bg-pink text-white hover:border-indigo-100 hover:bg-indigo-100 hover:text-secondary px-4 py-4 mx-0 my-0"
-                >
-                  {speciality}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {matchedSpecialities.map((speciality, index) => (
+            <a
+              key={index} // Add a unique key prop
+              href={`https://superdoc.bg/lekari?specialty_id=${availableSpecialities[speciality]}&region_id=2&name=`}
+              target="_blank"
+              className="border-2 border-pink rounded-xl ml-5 bg-pink text-white hover:border-indigo-100 hover:bg-indigo-100 hover:text-secondary py-4 px-4 mx-0 my-0"
+            >
+              {speciality}
+            </a>
+          ))}
         </div>
       );
     } else {
       return null;
     }
   };
+  
 
   const handleSubmit = async () => {
     try {
@@ -107,9 +106,9 @@ const Doctor = () => {
             <img src={symptomImage} alt="AI Self Doctor" className="w-[32em] h-[32em] mx-32" />
           </div>
           <div className="mt-32 mx-8 whitespace-nowrap">
-            <h2 className="text-4xl mb-6">Select Symptoms:</h2>
+            <h2 className="text-4xl mb-6 pb-10">Select Symptoms:</h2>
             <div className="flex flex-col">
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input 
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -118,7 +117,7 @@ const Doctor = () => {
                   />
                   Fever
                 </label>
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -127,7 +126,7 @@ const Doctor = () => {
                   />
                   Headache
                 </label>
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -136,7 +135,7 @@ const Doctor = () => {
                   />
                   Temperature
                 </label>
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -148,7 +147,7 @@ const Doctor = () => {
               </div>
 
               <div className="flex flex-col">
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -157,7 +156,7 @@ const Doctor = () => {
                   />
                   Stomach Cramps
                 </label>
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -166,7 +165,7 @@ const Doctor = () => {
                   />
                   Leg pain
                 </label>
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -175,7 +174,7 @@ const Doctor = () => {
                   />
                   Muscle Aches
                 </label>
-                <label class="ms-2 text-lg text-gray-900 leading-7">
+                <label className="ms-2 text-lg text-gray-900 leading-7">
                   <input
                     className="cursor-pointer w-6 h-6 text-blue-600 bg-gray-100 mr-1 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     type="checkbox"
@@ -189,15 +188,15 @@ const Doctor = () => {
           </div>
         </div>
         {response && (
-          <div className="mt-20">
-            <h2 className="text-4xl">Doctor's Response:</h2>
+          <div className="pr-10">
+            <h2 className="text-4xl pb-20">Doctor's Response:</h2>
             <p className="border-primary border-2 bg-primary overflow-y-auto leading-loose max-w-[40em] p-4"
               dangerouslySetInnerHTML={{
                 __html: response.replace(/\\n/g, "<br />"),
               }}
             />
 
-            <div className="mt-4 p-12 flex">
+            <div className="mt-10 flex flex-row justify-center">
               {renderSuperDocLink()}
             </div>
 
