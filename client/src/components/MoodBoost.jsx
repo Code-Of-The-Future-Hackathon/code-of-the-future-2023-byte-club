@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Navbar, Footer } from "./";
 
 const MoodBoost = () => {
   const [actOfKindness, setActOfKindness] = useState("");
@@ -27,14 +28,20 @@ const MoodBoost = () => {
   };
 
   return (
-    <div>
-      <h2>Act of Kindness:</h2>
-      <p>{actOfKindness}</p>
+    <>
+      <Navbar />
 
-      
-      <h2>Quote:</h2>
-      <p>{quote}</p>
-    </div>
+      <div className="w-full flex flex-col pt-[4em] items-center">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl p-[1.5em]  font-bold text-blue-500">Act of Kindness:</h2>
+        <p className="text-xl sm:text-2xl md:text-3xl italic m-[1.5em] xs:m-0 text-slate-900">{actOfKindness}</p>
+
+        
+        <h2 className="text-3xl sm:text-4xl md:text-6xl p-[1.5em] font-bold text-blue-500">Quote:</h2>
+        <p className="text-xl sm:text-2xl md:text-3xl italic pb-[3em] m-[1.5em] xs:m-0 text-slate-900">{quote}</p>
+      </div>
+
+      <Footer/>
+    </>
   );
 };
 
